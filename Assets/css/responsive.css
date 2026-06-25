@@ -1,0 +1,55 @@
+/* Custom Responsive Rules Systems Across Nine Absolute Target Resolutions */
+
+/* 1600px Screen Width optimization */
+@media (min-width: 1600px) {
+    .container { max-width: 1520px; }
+}
+
+/* 1400px Display Scaling */
+@media (max-width: 1400px) and (min-width: 1201px) {
+    .container { max-width: 1320px; }
+}
+
+/* 1200px Grid Conversions */
+@media (max-width: 1200px) {
+    .slide-img { max-height: 340px; }
+}
+
+/* 992px Tablets Landscape orientation modes */
+@media (max-width: 992px) {
+    .hero-slider-container { margin-top: 10px; }
+    .btn-group-grid { flex-direction: column; }
+    .tracking-wrapper { flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .tracking-wrapper::before { display: none; }
+    .tracking-step { flex-basis: 40%; }
+}
+
+/* 768px Tablets Portrait Orientation Layout rules */
+@media (max-width: 768px) {
+    .main-header .row { gap: 12px; }
+    .slide-img { max-height: 240px; }
+    .cart-item-row { text-align: center; }
+}
+
+/* 576px Standard Small Handset adaptations */
+@media (max-width: 576px) {
+    .fs-4 { font-size: 1.2rem !important; }
+    .tracking-step { flex-basis: 100%; }
+}
+
+/* 425px Mini Handheld Matrix scaling */
+@media (max-width: 425px) {
+    .slide-img { max-height: 180px; }
+    .navbar-brand h3 { font-size: 1.25rem; }
+}
+
+/* 375px Device constraints modifications */
+@media (max-width: 375px) {
+    .btn { padding: .25rem .5rem; font-size: .875rem; }
+}
+
+/* 320px Legacy Ultra-Narrow displays optimizations */
+@media (max-width: 320px) {
+    body { font-size: 13px; }
+    .container { padding-left: 8px; padding-right: 8px; }
+}

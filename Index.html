@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopKart Pro | Premium E-Commerce Marketplace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="stylesheet" href="Assets/css/responsive.css">
+</head>
+<body>
+
+   <header class="main-header py-3">
+        <div class="container-fluid px-4">
+            <div class="navbar-flex-container">
+                
+                <a href="index.html" class="navbar-logo-brand text-decoration-none text-primary">
+                    <i class="fas fa-shopping-bag text-warning me-2"></i>
+                    <h3 class="m-0 fw-bold d-inline">ShopKart <span class="text-warning">Pro</span></h3>
+                </a>
+
+                <div class="navbar-search-wrapper mx-3">
+                    <div class="input-group">
+                        <select id="category-filter-select" class="form-select border-primary" style="max-width: 140px;">
+                            <option value="all" selected>All Categories</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="computers">Computers</option>
+                            <option value="audio">Audio</option>
+                            <option value="wearables">Wearables</option>
+                            <option value="gaming">Gaming</option>
+                            <option value="cameras">Cameras</option>
+                        </select>
+                        <input id="global-search-input" type="text" class="form-control border-primary" placeholder="Search premium items, brands...">
+                        <button class="btn btn-primary px-3" type="button"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="navbar-actions-group">
+                    <div class="desktop-nav-links">
+                        <a href="about.html" class="text-dark text-decoration-none small fw-bold">About</a>
+                        <a href="contact.html" class="text-dark text-decoration-none small fw-bold">Contact</a>
+                        <a href="tracking.html" class="text-dark text-decoration-none position-relative"><i class="fas fa-truck fa-lg"></i></a>
+                    </div>
+
+                    <a href="cart.html" class="text-dark text-decoration-none position-relative nav-cart-icon-btn">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark cart-count">0</span>
+                    </a>
+
+                    <button class="btn btn-primary btn-sm rounded-pill px-3 d-none d-md-block">Login</button>
+
+                    <button class="mobile-menu-toggle-btn btn border-0 ps-2" onclick="toggleMobileSidebar(true)">
+                        <i class="fas fa-bars fa-lg text-dark"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-sidebar-drawer" class="mobile-nav-sidebar">
+        <div class="sidebar-header p-4 d-flex justify-content-between align-items-center border-bottom">
+            <h5 class="fw-bold m-0 text-primary"><i class="fas fa-bars me-2"></i>Navigation Menu</h5>
+            <button class="btn-close text-reset" onclick="toggleMobileSidebar(false)"></button>
+        </div>
+        <div class="sidebar-body p-4">
+            <ul class="list-unstyled d-flex flex-column gap-3 fs-5">
+                <li><a href="index.html" class="text-decoration-none text-dark d-block py-2"><i class="fas fa-home text-primary me-3"></i>Home</a></li>
+                <li><a href="products.html" class="text-decoration-none text-dark d-block py-2"><i class="fas fa-box text-primary me-3"></i>Products</a></li>
+                <li><a href="about.html" class="text-decoration-none text-dark d-block py-2"><i class="fas fa-info-circle text-primary me-3"></i>About Us</a></li>
+                <li><a href="contact.html" class="text-decoration-none text-dark d-block py-2"><i class="fas fa-envelope text-primary me-3"></i>Contact Support</a></li>
+                <li><a href="tracking.html" class="text-decoration-none text-dark d-block py-2"><i class="fas fa-shipping-fast text-primary me-3"></i>Track Order</a></li>
+            </ul>
+            <hr>
+            <button class="btn btn-primary w-100 py-2 rounded-pill mt-3">Login / Register</button>
+        </div>
+    </div>
+    <div id="sidebar-backdrop-overlay" class="sidebar-overlay-backdrop" onclick="toggleMobileSidebar(false)"></div>
+
+    <main class="container">
+        <section class="hero-slider-container my-4 shadow-sm animate__animated animate__fadeIn">
+            <div class="hero-slider-inner" id="hero-slider-inner">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Banner 1" class="slide-img">
+                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1200&q=80" alt="Banner 2" class="slide-img">
+        </section>
+
+        <section class="my-5">
+            <div class="d-between border-bottom pb-2 mb-4">
+                <h2 class="fw-bold text-primary m-0">Our Curated Catalog</h2>
+                <div class="badge bg-danger p-2 fs-6" id="offer-countdown">00d : 00h : 00m : 00s</div>
+            </div>
+            <div class="row g-4" id="products-showcase-grid">
+                </div>
+        </section>
+
+        <section class="bg-light rounded-4 p-4 my-5 shadow-sm">
+            <h3 class="text-center fw-bold mb-4">What Our Clients Say</h3>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card p-3 border-0 h-100 shadow-sm">
+                        <p class="text-muted italic">"The expedited tracking system is phenomenal. iPhone reached within 24 hours flawlessly packaged."</p>
+                        <h6 class="fw-bold mb-0 text-primary">- Shileshbhai Suthar</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 border-0 h-100 shadow-sm">
+                        <p class="text-muted">"Unbelievable customer support. Had a query regarding MacBook Pro configurations and support answered immediately."</p>
+                        <h6 class="fw-bold mb-0 text-primary">- Mahendra Raval</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 border-0 h-100 shadow-sm">
+                        <p class="text-muted">"ShopKart Pro provides a top-tier premium interface matching Apple's standards. Highly recommended!"</p>
+                        <h6 class="fw-bold mb-0 text-primary">- Jeel</h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-primary text-white rounded-4 p-5 text-center my-5 shadow-lg">
+            <h3 class="fw-bold mb-2">Join Our Exclusive Elite List</h3>
+            <p class="mb-4">Subscribe to receive early updates on hardware iterations and flash discounts.</p>
+            <form class="row g-2 justify-content-center" onsubmit="handleNewsletterSubmit(e)">
+                <div class="col-md-5"><input type="email" class="form-control" placeholder="Enter business email identity" required></div>
+                <div class="col-auto"><button type="submit" class="btn btn-orange text-white fw-bold">Unlock Access</button></div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="premium-footer py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="text-warning fw-bold mb-3">ShopKart Pro</h5>
+                    <p class="small text-muted">The definitive architectural design reference for decentralized modern direct-to-consumer e-commerce logistics pipelines.</p>
+                </div>
+                <div class="col-md-4 text-md-center">
+                    <h5>Quick Links</h5>
+                    <div class="d-flex flex-column gap-1 small">
+                        <a href="products.html">All Products</a>
+                        <a href="about.html">Corporate Mission</a>
+                        <a href="tracking.html">Logistics Tracking</a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <h5>Follow Us</h5>
+                    <div class="d-flex justify-content-md-end gap-3 fs-5 mt-2">
+                        <a href="https://www.instagram.com/bhavishy_suthar_08?igsh=MXg2NW12bGt2ZzNsag=="><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary mt-4">
+            <p class="text-center small text-muted mb-0">&copy; 2026 ShopKart Pro.&copy; 2024 All Rights Reserved By <a href="https://www.instagram.com/bhavishy_suthar_08?igsh=MXg2NW12bGt2ZzNsag==" class="bh">Bhavisy Suthar</a></p>
+        </div>
+    </footer>
+
+    <button onclick="scrolltoTop()" id="back-to-top" class="btn btn-warning shadow"><i class="fas fa-arrow-up"></i></button>
+
+    <div class="modal fade" id="newsletter-modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 text-center">
+                <div class="modal-header border-0 justify-content-end p-0"><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+                <i class="fas fa-envelope-open-text text-warning fa-3x mb-3"></i>
+                <h4 class="fw-bold">Claim 10% First Order Discount</h4>
+                <p class="text-muted small">Join our mailing list to receive premium updates instantly.</p>
+                <form onsubmit="handleNewsletterSubmit(event)">
+                    <input type="email" class="form-control mb-3" placeholder="Enter email" required>
+                    <button type="submit" class="btn btn-primary w-100">Claim Reward</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Assets/js/products.js"></script>
+    <script src="Assets/js/cart.js"></script>
+    <script src="Assets/js/main.js"></script>
+</body>
+</html>

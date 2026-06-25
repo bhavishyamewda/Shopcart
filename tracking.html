@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Order Tracking | ShopKart Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+</head>
+<body>
+    <div class="container my-5" style="max-width: 800px;">
+        <div id="tracking-success-alert" class="alert alert-success text-center mb-4 p-4 animate__animated animate__fadeIn" style="display:none;">
+            <i class="fas fa-check-circle fa-2x mb-2"></i><h4>Order Registered Successfully!</h4><p class="mb-0">Your payment process verified. Realtime pipeline simulation instantiated below.</p>
+        </div>
+        <div class="card p-4 shadow-sm mb-4">
+            <h4 class="fw-bold mb-3 text-center">Track System Package</h4>
+            <div class="input-group"><input type="text" id="tracking-id-input" class="form-control" placeholder="Enter alphanumeric code (e.g. SKP-123456)"><button id="track-submit-btn" class="btn btn-primary px-4"><i class="fas fa-search-location"></i> Trace</button></div>
+        </div>
+        <div class="card p-5 shadow-sm bg-light text-center">
+            <h5>Status Overview for Order Identity: <span id="display-order-id" class="text-primary fw-bold">...</span></h5>
+            <div class="tracking-wrapper">
+                <div class="tracking-step"><div class="icon-shape"><i class="fas fa-file-invoice"></i></div><p class="small text-muted mb-0">Order Placed</p></div>
+                <div class="tracking-step"><div class="icon-shape"><i class="fas fa-cogs"></i></div><p class="small text-muted mb-0">Processing</p></div>
+                <div class="tracking-step"><div class="icon-shape"><i class="fas fa-shipping-fast"></i></div><p class="small text-muted mb-0">Shipped</p></div>
+                <div class="tracking-step"><div class="icon-shape"><i class="fas fa-truck-ramp-box"></i></div><p class="small text-muted mb-0">Out for Delivery</p></div>
+                <div class="tracking-step"><div class="icon-shape"><i class="fas fa-box-open"></i></div><p class="small text-muted mb-0">Delivered</p></div>
+            </div>
+            <a href="index.html" class="btn btn-link text-decoration-none mt-3"><i class="fas fa-home"></i> Return back to main dashboard</a>
+        </div>
+    </div>
+    <script src="Assets/js/tracking.js"></script>
+</body>
+</html>

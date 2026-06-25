@@ -1,0 +1,361 @@
+/* Core Styling Rules Systems */
+:root {
+    --primary: #007185;
+    --primary-dark: #004b58;
+    --orange: #ff9900;
+    --orange-dark: #e68a00;
+    --bg-light: #f8f9fa;
+    --text-dark: #212529;
+    --white: #ffffff;
+    --shadow-premium: 0 8px 32px 0 rgba(0, 113, 133, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.18);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* Helper Utilities Layout adjustments */
+.d-between { display: flex; justify-content: space-between; align-items: center; }
+.btn-orange { background-color: var(--orange); border-color: var(--orange); }
+.btn-orange:hover { background-color: var(--orange-dark); border-color: var(--orange-dark); color: white; }
+.text-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* Sticky Premium Navigation Header Elements */
+/* Premium Navigation Header Fixed Fix */
+.main-header {
+    background-color: var(--white);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    width: 100%;
+}
+
+.main-header .container {
+    max-width: 100% !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+}
+
+/* Ensure the layout row alignment behaves correctly */
+.main-header .row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important; /* Prevents dropping lines */
+}
+
+/* Fix navbar dimensions to give spacing */
+.main-header nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+    justify-content: flex-end !important;
+}
+
+/* Ensure search input layout remains clean */
+.main-header .input-group {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Fix header positioning relative to content page blocks */
+body {
+    padding-top: 0px; /* Base */
+}
+
+.main-header.sticky {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-premium);
+}
+
+/* Keep breadcrumbs and details page content neatly padded under nav */
+#product-detail-view-mount {
+    margin-top: 40px !important;
+    padding-top: 10px;
+}
+
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 24px !important;
+}
+
+/* Slider Section Hero */
+.hero-slider-container {
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+.hero-slider-inner {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 300%;
+}
+.slide-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Glassmorphism Accented Cards Structure */
+.product-card {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--white);
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    height: 100%;
+}
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-premium);
+    border-color: var(--primary);
+}
+.image-standard {
+    height: 200px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.product-card:hover .image-standard {
+    transform: scale(1.05);
+}
+
+/* Interactive Timelines Layout Components */
+.tracking-wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 40px 0;
+}
+.tracking-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 25px; left: 0; right: 0;
+    height: 4px; background-color: #e0e0e0;
+    z-index: 1;
+}
+.tracking-step {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    flex-grow: 1;
+}
+.tracking-step .icon-shape {
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    color: white;
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 10px;
+    transition: all 0.4s ease;
+}
+.tracking-step.active .icon-shape {
+    background-color: var(--primary);
+    box-shadow: 0 0 15px rgba(0,113,133,0.4);
+}
+.tracking-step.active text { color: var(--primary); font-weight: 600; }
+
+/* Custom Toasts System Dynamic alerts */
+.toast-notification {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    background: rgba(0, 113, 133, 0.95);
+    color: white;
+    padding: 16px 28px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    z-index: 9999;
+    display: flex; align-items: center; gap: 12px;
+}
+
+/* Global Footer Layout configuration */
+.premium-footer {
+    background-color: blue;
+    color: black;
+}
+.premium-footer a { color: black; text-decoration: none; transition: color 0.2s; }
+.premium-footer a:hover { color: var(--orange); }
+
+.bh {
+    color: red;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 30px; left: 30px;
+    display: none; z-index: 999;
+    border-radius: 50%; width: 45px; height: 45px;
+}
+
+/* Premium Empty Cart Layout */
+.empty-cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    padding: 40px;
+    margin: 20px auto;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.empty-cart-container i {
+    color: #a0aec0;
+    margin-bottom: 24px;
+    background: #f7fafc;
+    padding: 30px;
+    border-radius: 50%;
+    border: 1px dashed #e2e8f0;
+}
+
+.empty-cart-container h3 {
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 12px;
+}
+
+.empty-cart-container p {
+    color: #718096;
+    max-width: 400px;
+    margin-bottom: 28px;
+    font-size: 0.95rem;
+}
+
+.empty-cart-container .btn {
+    padding: 12px 32px;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 113, 133, 0.2);
+    transition: all 0.2s ease;
+}
+
+.empty-cart-container .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 113, 133, 0.3);
+}
+
+/* Assignment Project Profile Custom Styles */
+.border-primary-subtle {
+    border-color: #cff4fc !important;
+}
+
+.bg-primary-subtle {
+    background-color: #cff4fc !important;
+}
+
+.bg-success-subtle {
+    background-color: #d1e7dd !important;
+}
+
+.text-success {
+    color: #0f5132 !important;
+}
+
+.shadow-2xs {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* Ensure academic tables fit without breaking alignment grid blocks */
+.table-borderless th, .table-borderless td {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    vertical-align: middle;
+}
+
+/* ================= REENGINEERED RESPONSIVE FLEX NAVBAR CONTROLS ================= */
+.navbar-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-search-wrapper {
+    flex-grow: 1;
+    max-width: 600px;
+}
+
+.navbar-actions-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.desktop-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.mobile-menu-toggle-btn {
+    display: none; /* Hidden by default layout on desktop monitors */
+}
+
+/* Slide-out Drawer Panel Elements styling rules */
+.mobile-nav-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Hidden offscreen natively */
+    width: 300px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+    z-index: 9999;
+    transition: right 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.mobile-nav-sidebar.open-active {
+    right: 0; /* Animated entry view matrix */
+}
+
+.sidebar-overlay-backdrop {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 9998;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay-backdrop.open-active {
+    display: block;
+    opacity: 1;
+}
+
+/* Responsive adjustments across mobile viewports scales breakpoints */
+@media (max-width: 768px) {
+    .desktop-nav-links {
+        display: none !important; /* Hide standard text links safely */
+    }
+    
+    .mobile-menu-toggle-btn {
+        display: block !important; /* Expose the interactive menu trigger toggle icon */
+    }
+    
+    .navbar-search-wrapper {
+        display: none !important; /* Hides bulky search fields on narrow views so branding fits cleanly */
+    }
+    
+    .navbar-logo-brand h3 {
+        font-size: 1.25rem;
+    }
+}
